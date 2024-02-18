@@ -5,6 +5,8 @@ target_folder = "/home/me/philnik.github.io/"
 
 source_file = "/home/me/org/equations.html"
 source_file = "/home/me/org/FEM.html"
+source_file = "/home/me/cases/case2407/sympy_vs_maxima.html"
+
 
 str_make_index = """tree -H '.' -L 1 --noreport --dirsfirst -T './*html' -s -D --charset utf-8 -I "index.html" -o index.html"""
 
@@ -16,7 +18,7 @@ def send_html_file(source_file):
     git add *.html
     chmod 777 *.html
     {str_make_index}
-    git commit -am "add FEM.html"
+    git commit -am "add {source_file}
     git push
     """
     os.system(add_file)

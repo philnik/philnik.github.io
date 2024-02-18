@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-02-18 Sun 12:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="me" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7ab2bd8">1. Solve equations symbolically to  an argument</a></li>
+<li><a href="#org3ae753c">2. Sympy vs maxima</a>
+<ul>
+<li><a href="#org95098af">2.1. sympy python</a></li>
+<li><a href="#org350c3a1">2.2. maxima</a></li>
+<li><a href="#org3bf307a">2.3. compare the sympy vs maxima results</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7ab2bd8" class="outline-2">
+<h2 id="org7ab2bd8"><span class="section-number-2">1.</span> Solve equations symbolically to  an argument</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Try to solve the equation:
+</p>
+
+<p>
+\[{\it SN}={{E}\over{12\,\left({\it SDR}-1\right)^3}}\]
+</p>
+
+<p>
+in a symbolic manner against variable \(SDR\).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3ae753c" class="outline-2">
+<h2 id="org3ae753c"><span class="section-number-2">2.</span> Sympy vs maxima</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org95098af" class="outline-3">
+<h3 id="org95098af"><span class="section-number-3">2.1.</span> sympy python</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #b4fa70;">from</span> sympy <span style="color: #b4fa70;">import</span> solve, diff
+<span style="color: #b4fa70;">from</span> sympy.abc <span style="color: #b4fa70;">import</span> x, y 
+<span style="color: #b4fa70;">from</span> sympy <span style="color: #b4fa70;">import</span> Symbol, print_latex 
+
+<span style="color: #fcaf3e;">E</span> = Symbol<span style="color: #00ffff;">(</span><span style="color: #e9b96e;">'E'</span>, positive=<span style="color: #e9b2e3;">True</span><span style="color: #00ffff;">)</span>
+<span style="color: #fcaf3e;">SDR</span> = Symbol<span style="color: #00ffff;">(</span><span style="color: #e9b96e;">'SDR'</span>, positive=<span style="color: #e9b2e3;">True</span><span style="color: #00ffff;">)</span>
+<span style="color: #fcaf3e;">SN</span> = Symbol<span style="color: #00ffff;">(</span><span style="color: #e9b96e;">'SN'</span>, positive=<span style="color: #e9b2e3;">True</span><span style="color: #00ffff;">)</span>
+
+<span style="color: #fcaf3e;">f</span> = SN - E/<span style="color: #00ffff;">(</span>12*<span style="color: #ffff00;">(</span>SDR-1<span style="color: #ffff00;">)</span>**3<span style="color: #00ffff;">)</span>
+<span style="color: #fcaf3e;">cp</span> = solve<span style="color: #00ffff;">(</span>f, SDR, <span style="color: #e090d7;">dict</span>=<span style="color: #e9b2e3;">True</span><span style="color: #00ffff;">)</span>
+print_latex<span style="color: #00ffff;">(</span>cp<span style="color: #00ffff;">)</span>
+
+<span style="color: #e090d7;">print</span><span style="color: #00ffff;">(</span>cp<span style="color: #00ffff;">)</span>
+
+</pre>
+</div>
+
+
+<pre class="example">
+[{SDR: (-1 - (-E - 12*SN)/(12*SN))**(1/3)*(-1/2 - sqrt(3)*I/2) + 1}, {SDR: (-1 - (-E - 12*SN)/(12*SN))**(1/3)*(-1/2 + sqrt(3)*I/2) + 1}, {SDR: (-1 - (-E - 12*SN)/(12*SN))**(1/3) + 1}]
+</pre>
+
+
+
+
+<p>
+\[\left[ \left\{ SDR : \sqrt[3]{-1 - \frac{- E - 12 SN}{12 SN}} \left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) + 1\right\}, \  \left\{ SDR : \sqrt[3]{-1 - \frac{- E - 12 SN}{12 SN}} \left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) + 1\right\}, \  \left\{ SDR : \sqrt[3]{-1 - \frac{- E - 12 SN}{12 SN}} + 1\right\}\right]\]
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org350c3a1" class="outline-3">
+<h3 id="org350c3a1"><span class="section-number-3">2.2.</span> maxima</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-maxima" id="org6198ef9">eq1:SN=E/<span style="color: #00ffff;">(</span>12*<span style="color: #ffff00;">(</span>SDR-1<span style="color: #ffff00;">)</span>**3<span style="color: #00ffff;">)</span>;
+eq2:solve<span style="color: #00ffff;">(</span><span style="color: #ffff00;">[</span>eq1<span style="color: #ffff00;">]</span>, <span style="color: #ffff00;">[</span>SDR<span style="color: #ffff00;">]</span><span style="color: #00ffff;">)</span>;
+
+sp1:rhs<span style="color: #00ffff;">(</span>eq2<span style="color: #ffff00;">[</span>1<span style="color: #ffff00;">]</span><span style="color: #00ffff;">)</span>;
+sp2:rhs<span style="color: #00ffff;">(</span>eq2<span style="color: #ffff00;">[</span>2<span style="color: #ffff00;">]</span><span style="color: #00ffff;">)</span>;
+sp3:rhs<span style="color: #00ffff;">(</span>eq2<span style="color: #ffff00;">[</span>3<span style="color: #ffff00;">]</span><span style="color: #00ffff;">)</span>;
+
+eq1: SDR = sp1;
+tex<span style="color: #00ffff;">(</span>eq1,numer<span style="color: #00ffff;">)</span>;
+
+eq1: SDR = sp2;
+tex<span style="color: #00ffff;">(</span>eq1,numer<span style="color: #00ffff;">)</span>;
+
+eq1: SDR = sp3;
+tex<span style="color: #00ffff;">(</span>eq1,numer<span style="color: #00ffff;">)</span>;
+
+fortran<span style="color: #00ffff;">(</span>eq1<span style="color: #00ffff;">)</span>;
+</pre>
+</div>
+
+<p>
+\[{\it SDR}={{\left({{-1}\over{2}}-{{\sqrt{3}\,i}\over{2}}\right)\,E
+ ^{{{1}\over{3}}}}\over{12^{{{1}\over{3}}}\,{\it SN}^{{{1}\over{3}}}
+ }}+1\]
+\[{\it SDR}={{\left({{\sqrt{3}\,i}\over{2}}+{{-1}\over{2}}\right)\,E
+ ^{{{1}\over{3}}}}\over{12^{{{1}\over{3}}}\,{\it SN}^{{{1}\over{3}}}
+ }}+1\]
+\[{\it SDR}={{{{9^{{{1}\over{3}}}\,E^{{{1}\over{3}}}}\over{4^{{{1
+ }\over{3}}}\,{\it SN}^{{{1}\over{3}}}}}+3}\over{3}}\]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3bf307a" class="outline-3">
+<h3 id="org3bf307a"><span class="section-number-3">2.3.</span> compare the sympy vs maxima results</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">p1</span><span style="color: #00ffff;">(</span>E, SN<span style="color: #00ffff;">)</span>:
+  <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e;">  sympy result</span>
+<span style="color: #e9b96e;">  """</span>
+  <span style="color: #b4fa70;">return</span> <span style="color: #00ffff;">(</span>-1 - <span style="color: #ffff00;">(</span>-E - 12*SN<span style="color: #ffff00;">)</span>/<span style="color: #ffff00;">(</span>12*SN<span style="color: #ffff00;">)</span><span style="color: #00ffff;">)</span>**<span style="color: #00ffff;">(</span>1/3<span style="color: #00ffff;">)</span> + 1
+
+
+<span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">p2</span><span style="color: #00ffff;">(</span>E, SN<span style="color: #00ffff;">)</span>:
+  <span style="color: #e9b96e;">"""</span>
+<span style="color: #e9b96e;">  maxima result</span>
+<span style="color: #e9b96e;">  """</span>
+  <span style="color: #fcaf3e;">SDR</span> = <span style="color: #00ffff;">(</span>4**<span style="color: #ffff00;">(</span><span style="color: #ff00ff;">(</span>-1.0E+0<span style="color: #ff00ff;">)</span>/3.0E+0<span style="color: #ffff00;">)</span>*9**<span style="color: #ffff00;">(</span>1.0E+0/3.0E+0<span style="color: #ffff00;">)</span>*E**<span style="color: #ffff00;">(</span>1.0E+0/3.0E+0<span style="color: #ffff00;">)</span>*SN**<span style="color: #ffff00;">(</span><span style="color: #ff00ff;">(</span>-1.0E+0<span style="color: #ff00ff;">)</span>/3.0E+0<span style="color: #ffff00;">)</span>+3<span style="color: #00ffff;">)</span>/3.0E+0
+  <span style="color: #b4fa70;">return</span> SDR
+
+
+<span style="color: #b4fa70;">for</span> i <span style="color: #b4fa70;">in</span> <span style="color: #e090d7;">range</span><span style="color: #00ffff;">(</span>1000<span style="color: #00ffff;">)</span>:
+  <span style="color: #b4fa70;">for</span> j <span style="color: #b4fa70;">in</span> <span style="color: #e090d7;">range</span><span style="color: #00ffff;">(</span>1000<span style="color: #00ffff;">)</span>:
+    <span style="color: #fcaf3e;">i</span> = i+1
+    <span style="color: #fcaf3e;">j</span> = j+1
+    <span style="color: #fcaf3e;">diff</span> = p1<span style="color: #00ffff;">(</span>i,j<span style="color: #00ffff;">)</span>-p2<span style="color: #00ffff;">(</span>i,j<span style="color: #00ffff;">)</span>
+    <span style="color: #b4fa70;">if</span> diff &gt; 0.00001:
+      <span style="color: #e090d7;">print</span><span style="color: #00ffff;">(</span><span style="color: #e9b96e;">'error'</span><span style="color: #00ffff;">)</span>
+
+</pre>
+</div>
+
+<p>
+<code>Equal</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: me</p>
+<p class="date">Created: 2024-02-18 Sun 12:18</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
