@@ -3,18 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-02-18 Sun 12:18 -->
+<!-- 2024-02-18 Sun 12:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
 <meta name="author" content="me" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/hideshow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -54,12 +59,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7ab2bd8">1. Solve equations symbolically to  an argument</a></li>
-<li><a href="#org3ae753c">2. Sympy vs maxima</a>
+<li><a href="#orgcdf47b8">1. maxima vs sympy</a>
 <ul>
-<li><a href="#org95098af">2.1. sympy python</a></li>
-<li><a href="#org350c3a1">2.2. maxima</a></li>
-<li><a href="#org3bf307a">2.3. compare the sympy vs maxima results</a></li>
+<li><a href="#org27a512e">1.1. Solve equations symbolically to  an argument</a></li>
+<li><a href="#orgc86fb76">1.2. Sympy vs maxima</a></li>
+<li><a href="#orga4b5786">1.3. sympy python</a></li>
+<li><a href="#orgc83fc5e">1.4. maxima</a></li>
+<li><a href="#org0e743fb">1.5. compare the sympy vs maxima results</a></li>
 </ul>
 </li>
 </ul>
@@ -67,9 +73,13 @@
 </div>
 
 
-<div id="outline-container-org7ab2bd8" class="outline-2">
-<h2 id="org7ab2bd8"><span class="section-number-2">1.</span> Solve equations symbolically to  an argument</h2>
+<div id="outline-container-orgcdf47b8" class="outline-2">
+<h2 id="orgcdf47b8"><span class="section-number-2">1.</span> maxima vs sympy</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org27a512e" class="outline-3">
+<h3 id="org27a512e"><span class="section-number-3">1.1.</span> Solve equations symbolically to  an argument</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 Try to solve the equation:
 </p>
@@ -85,13 +95,14 @@ in a symbolic manner against variable \(SDR\).
 </div>
 
 
-<div id="outline-container-org3ae753c" class="outline-2">
-<h2 id="org3ae753c"><span class="section-number-2">2.</span> Sympy vs maxima</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgc86fb76" class="outline-3">
+<h3 id="orgc86fb76"><span class="section-number-3">1.2.</span> Sympy vs maxima</h3>
 </div>
-<div id="outline-container-org95098af" class="outline-3">
-<h3 id="org95098af"><span class="section-number-3">2.1.</span> sympy python</h3>
-<div class="outline-text-3" id="text-2-1">
+
+
+<div id="outline-container-orga4b5786" class="outline-3">
+<h3 id="orga4b5786"><span class="section-number-3">1.3.</span> sympy python</h3>
+<div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #b4fa70;">from</span> sympy <span style="color: #b4fa70;">import</span> solve, diff
 <span style="color: #b4fa70;">from</span> sympy.abc <span style="color: #b4fa70;">import</span> x, y 
@@ -126,11 +137,11 @@ print_latex<span style="color: #00ffff;">(</span>cp<span style="color: #00ffff;"
 
 
 
-<div id="outline-container-org350c3a1" class="outline-3">
-<h3 id="org350c3a1"><span class="section-number-3">2.2.</span> maxima</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgc83fc5e" class="outline-3">
+<h3 id="orgc83fc5e"><span class="section-number-3">1.4.</span> maxima</h3>
+<div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
-<pre class="src src-maxima" id="org6198ef9">eq1:SN=E/<span style="color: #00ffff;">(</span>12*<span style="color: #ffff00;">(</span>SDR-1<span style="color: #ffff00;">)</span>**3<span style="color: #00ffff;">)</span>;
+<pre class="src src-maxima" id="org57d9da7">eq1:SN=E/<span style="color: #00ffff;">(</span>12*<span style="color: #ffff00;">(</span>SDR-1<span style="color: #ffff00;">)</span>**3<span style="color: #00ffff;">)</span>;
 eq2:solve<span style="color: #00ffff;">(</span><span style="color: #ffff00;">[</span>eq1<span style="color: #ffff00;">]</span>, <span style="color: #ffff00;">[</span>SDR<span style="color: #ffff00;">]</span><span style="color: #00ffff;">)</span>;
 
 sp1:rhs<span style="color: #00ffff;">(</span>eq2<span style="color: #ffff00;">[</span>1<span style="color: #ffff00;">]</span><span style="color: #00ffff;">)</span>;
@@ -164,9 +175,9 @@ fortran<span style="color: #00ffff;">(</span>eq1<span style="color: #00ffff;">)<
 </div>
 
 
-<div id="outline-container-org3bf307a" class="outline-3">
-<h3 id="org3bf307a"><span class="section-number-3">2.3.</span> compare the sympy vs maxima results</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org0e743fb" class="outline-3">
+<h3 id="org0e743fb"><span class="section-number-3">1.5.</span> compare the sympy vs maxima results</h3>
+<div class="outline-text-3" id="text-1-5">
 <div class="org-src-container">
 <pre class="src src-python">
 <span style="color: #b4fa70;">def</span> <span style="color: #fce94f;">p1</span><span style="color: #00ffff;">(</span>E, SN<span style="color: #00ffff;">)</span>:
@@ -204,7 +215,7 @@ fortran<span style="color: #00ffff;">(</span>eq1<span style="color: #00ffff;">)<
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: me</p>
-<p class="date">Created: 2024-02-18 Sun 12:18</p>
+<p class="date">Created: 2024-02-18 Sun 12:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

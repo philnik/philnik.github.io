@@ -18,7 +18,7 @@ def send_html_file(source_file):
     git add *.html
     chmod 777 *.html
     {str_make_index}
-    git commit -am "add {source_file}
+    git commit -am "add {source_file}"
     git push
     """
     os.system(add_file)
