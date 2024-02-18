@@ -1,0 +1,138 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+
+
+#+HTML_HEAD: <style type="text/css">
+#+HTML_HEAD: pre {
+#+HTML_HEAD:     /* Use #EAEAEA for background-color of border with src code block's name */
+#+HTML_HEAD:     background-color: #0e0e23;
+#+HTML_HEAD:     border: 1px solid #DEDEDE;
+#+HTML_HEAD:     color: #ffffff;
+#+HTML_HEAD:     font-family: monospace;
+#+HTML_HEAD:     line-height: 1.14em;
+#+HTML_HEAD:     overflow: auto;
+#+HTML_HEAD:     /* overflow-x: auto; */
+#+HTML_HEAD:     padding: 10px;
+#+HTML_HEAD: </style>
+
+    
+
+* maxima vs sympy
+
+** Solve equations symbolically to  an argument
+
+Try to solve the equation:
+
+$${\it SN}={{E}\over{12\,\left({\it SDR}-1\right)^3}}$$
+
+in a symbolic manner against variable $SDR$.
+
+
+
+** Sympy vs maxima
+
+
+** sympy python
+
+#+begin_src python :session *Python* :results output
+  from sympy import solve, diff
+  from sympy.abc import x, y 
+  from sympy import Symbol, print_latex 
+
+  E = Symbol('E', positive=True)
+  SDR = Symbol('SDR', positive=True)
+  SN = Symbol('SN', positive=True)
+
+  f = SN - E/(12*(SDR-1)**3)
+  cp = solve(f, SDR, dict=True)
+  print_latex(cp[0])
+  print_latex(cp[1])
+  print_latex(cp[2])
+
+  print(cp[2])
+
+#+end_src
+
+#+RESULTS:
+
+$$\left\{ SDR : \sqrt[3]{-1 - \frac{- E - 12 SN}{12 SN}} \left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) + 1\right\}$$
+
+$$\left\{ SDR : \sqrt[3]{-1 - \frac{- E - 12 SN}{12 SN}} \left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) + 1\right\}$$
+
+$$\left\{ SDR : \sqrt[3]{-1 - \frac{- E - 12 SN}{12 SN}} + 1\right\}$$
+
+{SDR: (-1 - (-E - 12*SN)/(12*SN))**(1/3) + 1}
+
+
+
+
+
+
+** maxima
+
+#+name: hdpe_sn 
+#+begin_src maxima :results raw 
+    eq1:SN=E/(12*(SDR-1)**3);
+    eq2:solve([eq1], [SDR]);
+
+    sp1:rhs(eq2[1]);
+    sp2:rhs(eq2[2]);
+    sp3:rhs(eq2[3]);
+
+    eq1: SDR = sp1;
+    tex(eq1,numer);
+
+    eq1: SDR = sp2;
+    tex(eq1,numer);
+
+    eq1: SDR = sp3;
+    tex(eq1,numer);
+
+    fortran(eq1);
+#+end_src
+
+#+RESULTS: hdpe_sn
+
+$${\it SDR}={{\left({{-1}\over{2}}-{{\sqrt{3}\,i}\over{2}}\right)\,E
+ ^{{{1}\over{3}}}}\over{12^{{{1}\over{3}}}\,{\it SN}^{{{1}\over{3}}}
+ }}+1$$
+$${\it SDR}={{\left({{\sqrt{3}\,i}\over{2}}+{{-1}\over{2}}\right)\,E
+ ^{{{1}\over{3}}}}\over{12^{{{1}\over{3}}}\,{\it SN}^{{{1}\over{3}}}
+ }}+1$$
+$${\it SDR}={{{{9^{{{1}\over{3}}}\,E^{{{1}\over{3}}}}\over{4^{{{1
+ }\over{3}}}\,{\it SN}^{{{1}\over{3}}}}}+3}\over{3}}$$
+
+
+** compare the sympy vs maxima results
+ 
+
+#+begin_src python :session *Python* :results output
+
+  def p1(E, SN):
+    """
+    sympy result
+    """
+    return (-1 - (-E - 12*SN)/(12*SN))**(1/3) + 1
+
+
+  def p2(E, SN):
+    """
+    maxima result
+    """
+    SDR = (4**((-1.0E+0)/3.0E+0)*9**(1.0E+0/3.0E+0)*E**(1.0E+0/3.0E+0)*SN**((-1.0E+0)/3.0E+0)+3)/3.0E+0
+    return SDR
+
+
+  for i in range(1000):
+    for j in range(1000):
+      i = i+1
+      j = j+1
+      diff = p1(i,j)-p2(i,j)
+      if diff > 0.00001:
+	print('error')
+
+#+end_src
+
+=Equal=
+
+
+#+RESULTS:
