@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-24 Sun 00:12 -->
+<!-- 2024-03-24 Sun 00:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,23 +232,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgda00693">1. Purpose</a></li>
-<li><a href="#org13c447a">2. create the mesh</a></li>
-<li><a href="#orgbf91b85">3. automate export of mesh to elmer</a></li>
-<li><a href="#orgad7d2ea">4. write the sif file</a>
+<li><a href="#org2034442">1. Purpose</a></li>
+<li><a href="#org6d7a132">2. create the mesh</a></li>
+<li><a href="#org3e2d2d6">3. automate export of mesh to elmer</a></li>
+<li><a href="#org6f7969b">4. write the sif file</a>
 <ul>
-<li><a href="#orgde8a7dd">4.1. checking the results with plot</a></li>
+<li><a href="#orgda6e8e0">4.1. checking the results with plot</a></li>
 </ul>
 </li>
-<li><a href="#orge53681f">5. problem</a></li>
+<li><a href="#org9791f23">5. results exported wiith paraview</a></li>
+<li><a href="#org62350d8">6. problem</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgda00693" class="outline-2">
-<h2 id="orgda00693"><span class="section-number-2">1.</span> Purpose</h2>
+<div id="outline-container-org2034442" class="outline-2">
+<h2 id="org2034442"><span class="section-number-2">1.</span> Purpose</h2>
 <div class="outline-text-2" id="text-1">
 
-<div id="org62b8488" class="figure">
+<div id="orgce1ac3f" class="figure">
 <p><img src="./pressure_on_walls.png" alt="pressure_on_walls.png" />
 </p>
 </div>
@@ -256,8 +257,8 @@
 </div>
 
 
-<div id="outline-container-org13c447a" class="outline-2">
-<h2 id="org13c447a"><span class="section-number-2">2.</span> create the mesh</h2>
+<div id="outline-container-org6d7a132" class="outline-2">
+<h2 id="org6d7a132"><span class="section-number-2">2.</span> create the mesh</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-txt">//+
@@ -276,7 +277,7 @@ Curve Loop(1) = {1};
 Plane Surface(8) = {1};
 
 //+00
-Extrude {0, 0, 1} {Curve{1};}
+Extrude {0, 0, 3} {Curve{1};}
 
 //+
 //+
@@ -286,8 +287,8 @@ Extrude {0, 0, 1} {Curve{1};}
 </div>
 
 
-<div id="outline-container-orgbf91b85" class="outline-2">
-<h2 id="orgbf91b85"><span class="section-number-2">3.</span> automate export of mesh to elmer</h2>
+<div id="outline-container-org3e2d2d6" class="outline-2">
+<h2 id="org3e2d2d6"><span class="section-number-2">3.</span> automate export of mesh to elmer</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For converting the .geo file to elmer mesh by scripting we need the following script:
@@ -302,8 +303,8 @@ ElmerGrid 14 2 cylinder_shell.msh -autoclean
 </div>
 
 
-<div id="outline-container-orgad7d2ea" class="outline-2">
-<h2 id="orgad7d2ea"><span class="section-number-2">4.</span> write the sif file</h2>
+<div id="outline-container-org6f7969b" class="outline-2">
+<h2 id="org6f7969b"><span class="section-number-2">4.</span> write the sif file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 the full sif file is included.
@@ -393,8 +394,8 @@ These are enough to check the results on paraview.
 </p>
 </div>
 
-<div id="outline-container-orgde8a7dd" class="outline-3">
-<h3 id="orgde8a7dd"><span class="section-number-3">4.1.</span> checking the results with plot</h3>
+<div id="outline-container-orgda6e8e0" class="outline-3">
+<h3 id="orgda6e8e0"><span class="section-number-3">4.1.</span> checking the results with plot</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Add a second solver
@@ -477,7 +478,7 @@ the plot is give as follows:
 </p>
 
 
-<div id="org0082c95" class="figure">
+<div id="org6f4286e" class="figure">
 <p><img src="./plt.png" alt="plt.png" />
 </p>
 </div>
@@ -488,22 +489,52 @@ the plot is give as follows:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<div id="outline-container-orge53681f" class="outline-2">
-<h2 id="orge53681f"><span class="section-number-2">5.</span> problem</h2>
+<div id="outline-container-org9791f23" class="outline-2">
+<h2 id="org9791f23"><span class="section-number-2">5.</span> results exported wiith paraview</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+the whole procedure is hard to follow, even on simpler geometries, without using <i>gmsh</i>, <i>ElmerGUI</i> and <i>paraview</i>.
+</p>
 
-<div id="org8339582" class="figure">
+<p>
+paraview has also functions like <i>plot over line</i> and <i>wrap by vector</i> to view the plots and the results.
+</p>
+
+<p>
+screenshots of hwo the tank is shown on paraview are:
+</p>
+
+
+<div id="orgc34e7c7" class="figure">
+<p><img src="./pscreen.png" alt="pscreen.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org62350d8" class="outline-2">
+<h2 id="org62350d8"><span class="section-number-2">6.</span> problem</h2>
+<div class="outline-text-2" id="text-6">
+
+<div id="org756f93a" class="figure">
 <p><img src="./results_problem_at_the_middle.png" alt="results_problem_at_the_middle.png" />
 </p>
 </div>
@@ -512,7 +543,7 @@ the plot is give as follows:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: me</p>
-<p class="date">Created: 2024-03-24 Sun 00:12</p>
+<p class="date">Created: 2024-03-24 Sun 00:24</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
