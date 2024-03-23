@@ -189,24 +189,24 @@ screenshots of hwo the tank is shown on paraview are:
 [[./pscreen.png]]
 
 
+* final
 
+what suprised me about FEM results, is that at pressure 0 point the deflection /u/ is also zero.
 
- 
+It is like near highher pressure does not affect nearby region so much.
 
+The area affected it depends on thickness , but much more on the /modulus E/.
 
+So a thin and elastic material is not affected overall by a force applied to a point. The only region affected is near the area force is applied. The rest of the structure is like no force never applied.
 
+Above conclusion is validated by analytic equuation of pressure of thin shell cylinder, which goes like:
 
+$$/Delta R = /frac{q*R^2}{E*t}$$, where q the pressure at height.
 
+There is no variable of $z$ height on above equations.
 
+To visualize the above, there is a cylinder, holded on both edges, at constant pressure at the walls. The area that has some gradient on displacement, is near the ends, where the displacement changes from /0/ to $/Delta R$.
 
-
-
-
-
-
-
-
-* problem
 
 [[./results_problem_at_the_middle.png]]
 
