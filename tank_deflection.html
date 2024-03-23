@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-23 Sat 22:31 -->
+<!-- 2024-03-23 Sat 23:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -200,16 +200,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeb8420c">1. Purpose</a></li>
-<li><a href="#org4d8fa45">2. problem</a></li>
+<li><a href="#org5af1a9c">1. Purpose</a></li>
+<li><a href="#orgd934244">2. create the mesh</a></li>
+<li><a href="#org7dc6f81">3. problem</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeb8420c" class="outline-2">
-<h2 id="orgeb8420c"><span class="section-number-2">1.</span> Purpose</h2>
+<div id="outline-container-org5af1a9c" class="outline-2">
+<h2 id="org5af1a9c"><span class="section-number-2">1.</span> Purpose</h2>
 <div class="outline-text-2" id="text-1">
 
-<div id="org5f421f6" class="figure">
+<div id="orgf105b07" class="figure">
 <p><img src="./pressure_on_walls.png" alt="pressure_on_walls.png" />
 </p>
 </div>
@@ -217,11 +218,42 @@
 </div>
 
 
-<div id="outline-container-org4d8fa45" class="outline-2">
-<h2 id="org4d8fa45"><span class="section-number-2">2.</span> problem</h2>
+<div id="outline-container-orgd934244" class="outline-2">
+<h2 id="orgd934244"><span class="section-number-2">2.</span> create the mesh</h2>
 <div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-txt">//+
+SetFactory("OpenCASCADE");
 
-<div id="orgcac10d1" class="figure">
+Mesh.MeshSizeFromCurvature = 100;
+
+//εξωτερικός κυκλος
+//+
+Circle(1) = {0, 0, 0, 1.65, 0, 2*Pi};
+
+//+
+Curve Loop(1) = {1};
+
+
+Plane Surface(8) = {1};
+
+//+00
+Extrude {0, 0, 1} {Curve{1};}
+
+//+
+//+
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7dc6f81" class="outline-2">
+<h2 id="org7dc6f81"><span class="section-number-2">3.</span> problem</h2>
+<div class="outline-text-2" id="text-3">
+
+<div id="org934859a" class="figure">
 <p><img src="./results_problem_at_the_middle.png" alt="results_problem_at_the_middle.png" />
 </p>
 </div>
@@ -230,7 +262,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: me</p>
-<p class="date">Created: 2024-03-23 Sat 22:31</p>
+<p class="date">Created: 2024-03-23 Sat 23:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
