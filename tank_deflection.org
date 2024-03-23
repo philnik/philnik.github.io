@@ -127,7 +127,7 @@ End
 #+end_src
 
 
-It applies to a vertical line on cylinde wall, need to check to GUI to see the line and the number
+It applies to a vertical line on cylinder wall, need to check to GUI to see the line and the number
 
 #+begin_src txt
 Boundary Condition 4
@@ -177,35 +177,35 @@ plot "g1.dat" using 6:7 with lines,\
 
 
 
-* results exported wiith paraview
+* results exported with paraview
 
 
 the whole procedure is hard to follow, even on simpler geometries, without using /gmsh/, /ElmerGUI/ and /paraview/.
 
 paraview has also functions like /plot over line/ and /wrap by vector/ to view the plots and the results.
 
-screenshots of hwo the tank is shown on paraview are:
+screenshots of how the tank is shown on paraview are:
 
 [[./pscreen.png]]
 
 
 * final
 
-what suprised me about FEM results, is that at pressure 0 point the deflection /u/ is also zero.
+what surprised me about FEM results, is that at pressure 0 point the deflection /u/ is also near zero.
 
-It is like near highher pressure does not affect nearby region so much.
+It is like near higher pressure does not affect nearby region so much.
 
 The area affected it depends on thickness , but much more on the /modulus E/.
 
 So a thin and elastic material is not affected overall by a force applied to a point. The only region affected is near the area force is applied. The rest of the structure is like no force never applied.
 
-Above conclusion is validated by analytic equuation of pressure of thin shell cylinder, which goes like:
+Above conclusion is validated by analytic equation of pressure of thin shell cylinder, which goes like:
 
-$$/Delta R = /frac{q*R^2}{E*t}$$, where q the pressure at height.
+$$\Delta R = \frac{q\cdot R^2}{E \cdot t}$$, where q the pressure at height.
 
 There is no variable of $z$ height on above equations.
 
-To visualize the above, there is a cylinder, holded on both edges, at constant pressure at the walls. The area that has some gradient on displacement, is near the ends, where the displacement changes from /0/ to $/Delta R$.
+To visualize the above, there is a cylinder, holded on both edges, at constant pressure at the walls. The area that has some gradient on displacement, is near the ends, where the displacement changes from /0/ to $\Delta R$.
 
 
 [[./results_problem_at_the_middle.png]]
@@ -213,3 +213,7 @@ To visualize the above, there is a cylinder, holded on both edges, at constant p
 
 
 
+
+#  LocalWords:  gmsh geo msh ElmerGrid autoclean src sif elmergui txt
+#  LocalWords:  MATC tx ShellSolver ILU GCR uncomment DNU paraview
+#  LocalWords:  SaveLine SaveData dat Polyline dnu ElmerGUI frac cdot

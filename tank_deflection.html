@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-24 Sun 01:02 -->
+<!-- 2024-03-24 Sun 01:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,24 +232,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7f401cd">1. Purpose</a></li>
-<li><a href="#orged4b1f9">2. create the mesh</a></li>
-<li><a href="#org3f13c36">3. automate export of mesh to elmer</a></li>
-<li><a href="#org6078eb1">4. write the sif file</a>
+<li><a href="#orga021675">1. Purpose</a></li>
+<li><a href="#orgf05cd56">2. create the mesh</a></li>
+<li><a href="#org138bc5e">3. automate export of mesh to elmer</a></li>
+<li><a href="#orgd2683da">4. write the sif file</a>
 <ul>
-<li><a href="#orgd3555c3">4.1. checking the results with plot</a></li>
+<li><a href="#org515b678">4.1. checking the results with plot</a></li>
 </ul>
 </li>
-<li><a href="#orgb21386d">5. results exported wiith paraview</a></li>
-<li><a href="#org50ace5c">6. final</a></li>
+<li><a href="#orgfc6c249">5. results exported with paraview</a></li>
+<li><a href="#orgca6f61d">6. final</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7f401cd" class="outline-2">
-<h2 id="org7f401cd"><span class="section-number-2">1.</span> Purpose</h2>
+<div id="outline-container-orga021675" class="outline-2">
+<h2 id="orga021675"><span class="section-number-2">1.</span> Purpose</h2>
 <div class="outline-text-2" id="text-1">
 
-<div id="org01d28f4" class="figure">
+<div id="org063b85a" class="figure">
 <p><img src="./pressure_on_walls.png" alt="pressure_on_walls.png" />
 </p>
 </div>
@@ -257,8 +257,8 @@
 </div>
 
 
-<div id="outline-container-orged4b1f9" class="outline-2">
-<h2 id="orged4b1f9"><span class="section-number-2">2.</span> create the mesh</h2>
+<div id="outline-container-orgf05cd56" class="outline-2">
+<h2 id="orgf05cd56"><span class="section-number-2">2.</span> create the mesh</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-txt">//+
@@ -287,8 +287,8 @@ Extrude {0, 0, 3} {Curve{1};}
 </div>
 
 
-<div id="outline-container-org3f13c36" class="outline-2">
-<h2 id="org3f13c36"><span class="section-number-2">3.</span> automate export of mesh to elmer</h2>
+<div id="outline-container-org138bc5e" class="outline-2">
+<h2 id="org138bc5e"><span class="section-number-2">3.</span> automate export of mesh to elmer</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For converting the .geo file to elmer mesh by scripting we need the following script:
@@ -303,8 +303,8 @@ ElmerGrid 14 2 cylinder_shell.msh -autoclean
 </div>
 
 
-<div id="outline-container-org6078eb1" class="outline-2">
-<h2 id="org6078eb1"><span class="section-number-2">4.</span> write the sif file</h2>
+<div id="outline-container-orgd2683da" class="outline-2">
+<h2 id="orgd2683da"><span class="section-number-2">4.</span> write the sif file</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 the full sif file is included.
@@ -394,8 +394,8 @@ These are enough to check the results on paraview.
 </p>
 </div>
 
-<div id="outline-container-orgd3555c3" class="outline-3">
-<h3 id="orgd3555c3"><span class="section-number-3">4.1.</span> checking the results with plot</h3>
+<div id="outline-container-org515b678" class="outline-3">
+<h3 id="org515b678"><span class="section-number-3">4.1.</span> checking the results with plot</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Add a second solver
@@ -414,7 +414,7 @@ End
 
 
 <p>
-It applies to a vertical line on cylinde wall, need to check to GUI to see the line and the number
+It applies to a vertical line on cylinder wall, need to check to GUI to see the line and the number
 </p>
 
 <div class="org-src-container">
@@ -478,7 +478,7 @@ the plot is give as follows:
 </p>
 
 
-<div id="org77c22ed" class="figure">
+<div id="orgd567336" class="figure">
 <p><img src="./plt.png" alt="plt.png" />
 </p>
 </div>
@@ -489,8 +489,8 @@ the plot is give as follows:
 
 
 
-<div id="outline-container-orgb21386d" class="outline-2">
-<h2 id="orgb21386d"><span class="section-number-2">5.</span> results exported wiith paraview</h2>
+<div id="outline-container-orgfc6c249" class="outline-2">
+<h2 id="orgfc6c249"><span class="section-number-2">5.</span> results exported with paraview</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 the whole procedure is hard to follow, even on simpler geometries, without using <i>gmsh</i>, <i>ElmerGUI</i> and <i>paraview</i>.
@@ -501,11 +501,11 @@ paraview has also functions like <i>plot over line</i> and <i>wrap by vector</i>
 </p>
 
 <p>
-screenshots of hwo the tank is shown on paraview are:
+screenshots of how the tank is shown on paraview are:
 </p>
 
 
-<div id="orgf9481ef" class="figure">
+<div id="org4e20e79" class="figure">
 <p><img src="./pscreen.png" alt="pscreen.png" />
 </p>
 </div>
@@ -513,15 +513,15 @@ screenshots of hwo the tank is shown on paraview are:
 </div>
 
 
-<div id="outline-container-org50ace5c" class="outline-2">
-<h2 id="org50ace5c"><span class="section-number-2">6.</span> final</h2>
+<div id="outline-container-orgca6f61d" class="outline-2">
+<h2 id="orgca6f61d"><span class="section-number-2">6.</span> final</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-what suprised me about FEM results, is that at pressure 0 point the deflection <i>u</i> is also zero.
+what surprised me about FEM results, is that at pressure 0 point the deflection <i>u</i> is also near zero.
 </p>
 
 <p>
-It is like near highher pressure does not affect nearby region so much.
+It is like near higher pressure does not affect nearby region so much.
 </p>
 
 <p>
@@ -533,11 +533,11 @@ So a thin and elastic material is not affected overall by a force applied to a p
 </p>
 
 <p>
-Above conclusion is validated by analytic equuation of pressure of thin shell cylinder, which goes like:
+Above conclusion is validated by analytic equation of pressure of thin shell cylinder, which goes like:
 </p>
 
 <p>
-\[/Delta R = /frac{q*R^2}{E*t}\], where q the pressure at height.
+\[\Delta R = \frac{q\cdot R^2}{E \cdot t}\], where q the pressure at height.
 </p>
 
 <p>
@@ -545,12 +545,12 @@ There is no variable of \(z\) height on above equations.
 </p>
 
 <p>
-To visualize the above, there is a cylinder, holded on both edges, at constant pressure at the walls. The area that has some gradient on displacement, is near the ends, where the displacement changes from <i>0</i> to \(/Delta R\).
+To visualize the above, there is a cylinder, holded on both edges, at constant pressure at the walls. The area that has some gradient on displacement, is near the ends, where the displacement changes from <i>0</i> to \(\Delta R\).
 </p>
 
 
 
-<div id="org6d1908e" class="figure">
+<div id="org126abb1" class="figure">
 <p><img src="./results_problem_at_the_middle.png" alt="results_problem_at_the_middle.png" />
 </p>
 </div>
@@ -559,7 +559,7 @@ To visualize the above, there is a cylinder, holded on both edges, at constant p
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: me</p>
-<p class="date">Created: 2024-03-24 Sun 01:02</p>
+<p class="date">Created: 2024-03-24 Sun 01:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
