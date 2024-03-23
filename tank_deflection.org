@@ -177,6 +177,24 @@ plot "g1.dat" using 6:7 with lines,\
 
 
 
+* results exported wiith paraview
+
+
+the whole procedure is hard to follow, even on simpler geometries, without using /gmsh/, /ElmerGUI/ and /paraview/.
+
+paraview has also functions like /plot over line/ and /wrap by vector/ to view the plots and the results.
+
+screenshots of hwo the tank is shown on paraview are:
+
+[[./pscreen.png]]
+
+
+
+
+ 
+
+
+
 
 
 
