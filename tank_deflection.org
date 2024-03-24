@@ -1,9 +1,4 @@
 
-
-
-
-
-
 * Purpose
 
 
@@ -209,6 +204,36 @@ To visualize the above, there is a cylinder, holded on both edges, at constant p
 
 
 [[./results_problem_at_the_middle.png]]
+
+
+
+* add a hole
+
+To add a hole I tried to code a .geo file, but it was not sucessful, mostly because it was a surface.
+
+So I modelled it on freecad, the procedure was:
+
+- sketch a circle and extrude /pad/.
+- sketch at a perpendicular plane the holes and /pocket/.
+- explode the compound to get the external surface
+- export the surface to .step
+- import the .step to gmsh
+- mesh the surface and export .msh     
+- convert to elmer mesh
+- open ElmerGUI to find the new boundaries and bodies.
+- adjust the sif file to the new conditions
+- run the solver
+- view the results on paraview
+
+
+[[./pressure_on_walls_with_hole.png]]
+
+
+The lower hole is not moved because I added /u=0/ boundary condition. The most accurate is to add a thick tube as solid material. 
+
+Also tht vertical boundary that export the plot, it at 90degrees to the holes, and it is little affected by the stresses on the holes.
+
+[[./plot_with_holes.png]]
 
 
 
