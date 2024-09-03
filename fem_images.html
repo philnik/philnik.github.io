@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        img {
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div id="gallery">
+        <!-- Images will be inserted here -->
+    </div>
+    <script>
+      const images = [
+	  "fem/1.jpg",
+	  "fem/10.jpg",
+	  "fem/11.jpg",
+	  "fem/110.jpg",
+	  "fem/12.jpg",
+	  "fem/2.jpg",
+	  "fem/3.jpg",
+	  "fem/4.jpg",
+	  "fem/5.jpg",
+	  "fem/6.jpg",
+	  "fem/8.jpg",
+	  "fem/9.jpg",
+	  "fem/elasticity.jpg",
+	  "fem/resu.jpg",
+	  "fem/resu0.jpg",
+	  "fem/resu1.jpg",
+	  "fem/resu10.jpg",
+	  "fem/resu11.jpg",
+	  "fem/resu12.jpg",
+	  "fem/resu13.jpg",
+	  "fem/resu14.jpg",
+	  "fem/resu15.jpg",
+	  "fem/resu16.jpg",
+	  "fem/resu2.jpg",
+	  "fem/resu20.jpg",
+	  "fem/resu21.jpg",
+	  "fem/resu22.jpg",
+	  "fem/resu23.jpg",
+	  "fem/resu24.jpg",
+	  "fem/resu25.jpg",
+	  "fem/resu26.jpg",
+	  "fem/temperature.jpg"
+            // Add more image paths here
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Image';
+            gallery.appendChild(img);
+        });
+    </script>
+</body>
+</html>

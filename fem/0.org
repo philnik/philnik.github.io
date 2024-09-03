@@ -1,0 +1,25 @@
+
+
+
+
+
+
+#+begin_src python :session *Python*
+import os
+os.listdir()
+
+res = []        
+    
+import glob
+l = glob.glob('*.jpg')    
+
+s = ""    
+for i in l:
+    row = "\"'fem/"""+i+"\n"+"""\',"""
+    s = s+row
+
+s        
+#+end_src
+
+#+RESULTS:
+: fem/1.jpg

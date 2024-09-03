@@ -1,0 +1,58 @@
+
+
+
+
+
+
+#+begin_src python :session *Python*
+import os
+os.listdir()
+
+res = []        
+    
+import glob
+l = glob.glob('*.jpg')    
+
+s = ""    
+for i in l:
+    row = "\"fem/"+i+"\","+"\n"
+    s = s+row
+
+s        
+#+end_src
+
+#+RESULTS:
+#+begin_example
+"fem/1.jpg",
+"fem/10.jpg",
+"fem/11.jpg",
+"fem/110.jpg",
+"fem/12.jpg",
+"fem/2.jpg",
+"fem/3.jpg",
+"fem/4.jpg",
+"fem/5.jpg",
+"fem/6.jpg",
+"fem/8.jpg",
+"fem/9.jpg",
+"fem/elasticity.jpg",
+"fem/resu.jpg",
+"fem/resu0.jpg",
+"fem/resu1.jpg",
+"fem/resu10.jpg",
+"fem/resu11.jpg",
+"fem/resu12.jpg",
+"fem/resu13.jpg",
+"fem/resu14.jpg",
+"fem/resu15.jpg",
+"fem/resu16.jpg",
+"fem/resu2.jpg",
+"fem/resu20.jpg",
+"fem/resu21.jpg",
+"fem/resu22.jpg",
+"fem/resu23.jpg",
+"fem/resu24.jpg",
+"fem/resu25.jpg",
+"fem/resu26.jpg",
+"fem/temperature.jpg",
+#+end_example
