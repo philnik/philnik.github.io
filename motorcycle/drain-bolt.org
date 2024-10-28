@@ -1,8 +1,5 @@
 
 
-
-
-
     * Change motorycle engine coolant
 
     #+ATTR: 100 
