@@ -64,7 +64,5 @@
     #+end_src
 
     #+RESULTS:
-    : [main 1c36fa1] update index
-    :  1 file changed, 17 insertions(+), 45 deletions(-)
 
    
