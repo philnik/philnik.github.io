@@ -52,7 +52,10 @@
        git push 
     #+end_src
 
-** try this with lisp 
+** try this with lisp
+
+    It updates the file only because teh result of the function changes
+    
     #+begin_src lisp :session *slime-repl sbcl*
     (ql:quickload :uiop)
     (let ((git-command "git commit -am \"update index\"  "))
@@ -64,5 +67,7 @@
     #+end_src
 
     #+RESULTS:
+    : [main 161aa76] update index
+    :  1 file changed, 2 deletions(-)
 
    
