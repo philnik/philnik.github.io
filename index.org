@@ -61,6 +61,7 @@
 ** upload using shell
     #+begin_src shell exports :none :results none
        cd c:/Users/filip/AppData/Roaming/projects/philnik.github.io
+       git commit index.html
        git commit -am "remove source code blocks"
        git push 
     #+end_src
