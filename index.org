@@ -61,7 +61,7 @@
       (ql:quickload :cl-interpol)
       (named-readtables:in-readtable :interpol-syntax)
       (format nil "~a"
-      (let ((git-command "git commit -am \"update index\" &&  git push "
+      (let ((git-command #?"git commit -am \"update index\" &&  git push "
                          )
             )
       (uiop:run-program git-command
@@ -73,7 +73,7 @@
     #+end_src
 
     #+RESULTS:
-    : [main acb4e93] update index
-    :  1 file changed, 3 insertions(+), 3 deletions(-)
+    : [main e18f55e] update index
+    :  1 file changed, 3 insertions(+), 4 deletions(-)
 
    
