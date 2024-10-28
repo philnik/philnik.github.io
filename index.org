@@ -52,28 +52,4 @@
        git push 
     #+end_src
 
-** try this with lisp
-
-    It updates the file only because teh result of the function changes
-    
-    #+begin_src lisp :session *slime-repl sbcl*
-      (ql:quickload :uiop)
-      (ql:quickload :cl-interpol)
-      (named-readtables:in-readtable :interpol-syntax)
-      (format nil "~a"
-      (let ((git-command #?"git commit -am \"update index\" &&  git push "
-                         )
-            )
-      (uiop:run-program git-command
-           :output :string
-      :error-output :string
-      ))
-              )
-
-    #+end_src
-
-    #+RESULTS:
-    : [main e18f55e] update index
-    :  1 file changed, 3 insertions(+), 4 deletions(-)
-
    
