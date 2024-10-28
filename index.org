@@ -30,7 +30,6 @@
     [[./fem/test.html]]
 
     Pictures of fem runs
-
     
     
 ** sympy vs maxima
@@ -51,6 +50,10 @@
 
     Change engine cooling fluid of Zontes G1 150
 
+
+** org-mode produce python code, using lisp
+
+    [[./test-lisp-src-code-blocks.html]]
 
 
 * upload file                                                      :noexport:
