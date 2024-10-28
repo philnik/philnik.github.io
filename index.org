@@ -41,13 +41,33 @@
 
     Change engine cooling fluid of Zontes G1 150
 
+
+
     
+    #+begin_src shell
+       cd c:/Users/filip/AppData/Roaming/projects/philnik.github.io
+       git commit -am "update index"
+
+
+    #+end_src
+
+    #+RESULTS:
+    | Microsoft                                                     | Windows                                                   | [Version     | 10.0.22631.4317] |        |           |
+    | (c)                                                           | Microsoft                                                 | Corporation. | All              | rights | reserved. |
+    |                                                               |                                                           |              |                  |        |           |
+    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>cd  | c:/Users/filip/AppData/Roaming/projects/philnik.github.io |              |                  |        |           |
+    |                                                               |                                                           |              |                  |        |           |
+    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | commit                                                    | -m           | 'update          | index' |           |
+    |                                                               |                                                           |              |                  |        |           |
+    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>    |                                                           |              |                  |        |           |
 
     #+begin_src lisp :session *slime-repl sbcl*
     (ql:quickload :uiop)
-    (let ((git-command "git commit -am 'update index' && git push"))
+    (let ((git-command "git commit -am 'update index'"))
     (uiop:run-program git-command
-         :output :string))
+         :output :string
+    :error-output :string
+    ))
 
     #+end_src
 
