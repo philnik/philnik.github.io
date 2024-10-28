@@ -19,9 +19,19 @@
     [[binomials][example of binomials]]
 
 ** FEM
+
+*** Software Installation
 [[./FEM.html]]
 
-    Pictures of Elmer FEM runs
+    Install finite elements
+
+*** FEM pictures
+
+    [[./fem/test.html]]
+
+    Pictures of fem runs
+
+    
     
 ** sympy vs maxima
 
