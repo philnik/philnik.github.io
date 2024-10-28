@@ -1,12 +1,16 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
+* Change motorycle engine coolant
 
-    * Change motorycle engine coolant
-
-    #+ATTR: 100 
+    #+ATTR: 100
+    
+    #+attr_html: :width 400px
+    #+CAPTION: Position of drain bolt
+    #+ATTR_HTML: :alt drain-bolt-position :title drain-bolt-position :align center
     [[./drain-bolt.png]]
 
 
-    Steps to change the cooling liquid:
+** Steps to change the engine coolant
 
     1. Remove the drain bolt : size of bolt 8mm wrench (check again M___)
     2. If the bolt is rusty, replace
@@ -31,9 +35,13 @@
     19. Check with the engine on if the engine overheats and fill more cooling fluid.
 
 
-    Comments:
+** Comments:
     - The flow appears to be little up , in the engine , so probably there must be some leftovers.
     - It needs to be filled very little each time, make some bubbles to suck the fluid, and fill again as much as the radiator cap area can take.
     - I can not be filled by the overflow tank.
     - The overflow does not change level, need to check radiator pressure.
     - It had white salt deposits undfer the  cap.
+
+    
+** TODO
+    - Find a more quick way to fill the engine coolant.
