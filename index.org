@@ -52,19 +52,7 @@
        git push 
     #+end_src
 
-    #+RESULTS:
-    | Microsoft                                                     | Windows                                                   | [Version     | 10.0.22631.4317] |                |           |             |
-    | (c)                                                           | Microsoft                                                 | Corporation. | All              | rights         | reserved. |             |
-    |                                                               |                                                           |              |                  |                |           |             |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>cd  | c:/Users/filip/AppData/Roaming/projects/philnik.github.io |              |                  |                |           |             |
-    |                                                               |                                                           |              |                  |                |           |             |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | commit                                                    | -am          | "remove          | source         | code      | blocks"     |
-    | [main                                                         | c8abe89]                                                  | remove       | source           | code           | blocks    |             |
-    | 1                                                             | file                                                      | changed,     | 15               | insertions(+), | 1         | deletion(-) |
-    |                                                               |                                                           |              |                  |                |           |             |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | push                                                      |              |                  |                |           |             |
-    |                                                               |                                                           |              |                  |                |           |             |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>    |                                                           |              |                  |                |           |             |
+
 
 
 
