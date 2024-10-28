@@ -61,10 +61,10 @@
 ** upload using shell
     #+begin_src shell exports :none :results none
        cd c:/Users/filip/AppData/Roaming/projects/philnik.github.io
-       git commit index.html
+       git commit index.html -m "add index"
        git commit -am "remove source code blocks"
        git push 
-    #+end_src
+    #+end_srcq
 
 #+begin_src emacs-lisp
     (org-html-export-to-html)
