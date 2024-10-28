@@ -52,14 +52,16 @@
     #+end_src
 
     #+RESULTS:
-    | Microsoft                                                     | Windows                                                   | [Version     | 10.0.22631.4317] |        |           |
-    | (c)                                                           | Microsoft                                                 | Corporation. | All              | rights | reserved. |
-    |                                                               |                                                           |              |                  |        |           |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>cd  | c:/Users/filip/AppData/Roaming/projects/philnik.github.io |              |                  |        |           |
-    |                                                               |                                                           |              |                  |        |           |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | commit                                                    | -m           | 'update          | index' |           |
-    |                                                               |                                                           |              |                  |        |           |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>    |                                                           |              |                  |        |           |
+    | Microsoft                                                     | Windows                                                   | [Version     | 10.0.22631.4317] |                |           |              |
+    | (c)                                                           | Microsoft                                                 | Corporation. | All              | rights         | reserved. |              |
+    |                                                               |                                                           |              |                  |                |           |              |
+    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>cd  | c:/Users/filip/AppData/Roaming/projects/philnik.github.io |              |                  |                |           |              |
+    |                                                               |                                                           |              |                  |                |           |              |
+    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | commit                                                    | -am          | "update          | index"         |           |              |
+    | [main                                                         | aad0723]                                                  | update       | index            |                |           |              |
+    | 1                                                             | file                                                      | changed,     | 22               | insertions(+), |         2 | deletions(-) |
+    |                                                               |                                                           |              |                  |                |           |              |
+    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>    |                                                           |              |                  |                |           |              |
 
     #+begin_src lisp :session *slime-repl sbcl*
     (ql:quickload :uiop)
