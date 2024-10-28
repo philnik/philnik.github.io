@@ -43,25 +43,15 @@
 
 
 
+* upload file                                                      :NOEXPORT:
     
     #+begin_src shell
        cd c:/Users/filip/AppData/Roaming/projects/philnik.github.io
        git commit -am "update index"
+       git push 
 
 
     #+end_src
-
-    #+RESULTS:
-    | Microsoft                                                     | Windows                                                   | [Version     | 10.0.22631.4317] |                |           |              |
-    | (c)                                                           | Microsoft                                                 | Corporation. | All              | rights         | reserved. |              |
-    |                                                               |                                                           |              |                  |                |           |              |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>cd  | c:/Users/filip/AppData/Roaming/projects/philnik.github.io |              |                  |                |           |              |
-    |                                                               |                                                           |              |                  |                |           |              |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | commit                                                    | -am          | "update          | index"         |           |              |
-    | [main                                                         | 9cc676a]                                                  | update       | index            |                |           |              |
-    | 1                                                             | file                                                      | changed,     | 10               | insertions(+), |         8 | deletions(-) |
-    |                                                               |                                                           |              |                  |                |           |              |
-    | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>    |                                                           |              |                  |                |           |              |
 
     #+begin_src lisp :session *slime-repl sbcl*
     (ql:quickload :uiop)
