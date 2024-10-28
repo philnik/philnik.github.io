@@ -58,8 +58,8 @@
     | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>cd  | c:/Users/filip/AppData/Roaming/projects/philnik.github.io |              |                  |                |           |              |
     |                                                               |                                                           |              |                  |                |           |              |
     | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>git | commit                                                    | -am          | "update          | index"         |           |              |
-    | [main                                                         | aad0723]                                                  | update       | index            |                |           |              |
-    | 1                                                             | file                                                      | changed,     | 22               | insertions(+), |         2 | deletions(-) |
+    | [main                                                         | 9cc676a]                                                  | update       | index            |                |           |              |
+    | 1                                                             | file                                                      | changed,     | 10               | insertions(+), |         8 | deletions(-) |
     |                                                               |                                                           |              |                  |                |           |              |
     | c:\Users\filip\AppData\Roaming\projects\philnik.github.io>    |                                                           |              |                  |                |           |              |
 
