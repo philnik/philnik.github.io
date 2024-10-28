@@ -1,0 +1,42 @@
+
+
+
+
+* Code index
+
+** List of files
+
+    [[./0.html][List of dxf codes]]
+
+    Includes a list of dxf files produced by python library dxf
+
+** binomials
+
+    [[binomials][example of binomials]]
+
+** FEM
+
+    [[fem.html][finite elements project pictures]]
+
+** sympy vs maxima
+
+    [[sympy_vs_maxima.html][compare maxima to sympy]]
+
+    Code comparing of solving the same problem in maxima and sumpy
+
+** tank deflection
+
+    [[tank_deflection.html][finite elements method of tank deflection]]
+
+    Elmer finite elements method, results
+
+** fixing up my motorcycle
+
+    [[./motorcycle/drain-bolt.html][change cooling fluid]]
+
+    Change engine cooling fluid of Zontes G1 150
+
+    
+
+
+   
