@@ -52,6 +52,12 @@
        git push 
     #+end_src
 
+#+begin_src emacs-lisp
+    (org-html-export-to-html)
+#+end_src
+
+#+RESULTS:
+: index.html
 
 
 
