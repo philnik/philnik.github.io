@@ -57,17 +57,25 @@
     It updates the file only because teh result of the function changes
     
     #+begin_src lisp :session *slime-repl sbcl*
-    (ql:quickload :uiop)
-    (let ((git-command "git commit -am \"update index\"  "))
-    (uiop:run-program git-command
-         :output :string
-    :error-output :string
-    ))
+      (ql:quickload :uiop)
+      (ql:quickload :cl-interpol)
+      (named-readtables:in-readtable :interpol-syntax)
+      (format t "~a"
+      (let ((git-command "git commit -am \"update index\"
+      git push 
+      "
+                         )
+            )
+      (uiop:run-program git-command
+           :output :string
+      :error-output :string
+      ))
+              )
 
     #+end_src
 
     #+RESULTS:
-    : [main 161aa76] update index
-    :  1 file changed, 2 deletions(-)
+    : [main 2a6cefc] update index
+    :  1 file changed, 6 insertions(+), 1 deletion(-)
 
    
