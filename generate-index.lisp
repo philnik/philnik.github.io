@@ -36,10 +36,25 @@
  (generate-index))
 
 
-
+#?"hello"
 
 
 (let ((link "1.html"))
 (with-html
   (:span "Here is some copy, with "
     (:a :href link "a link."))))
+
+(defun use-uiop-to-run-git ()
+ (ql:quickload :uiop)
+      (ql:quickload :cl-interpol)
+      (named-readtables:in-readtable :interpol-syntax)
+      (format nil "~a"
+      (let ((git-command #?"git commit -am \"update index\" &&  git push "
+                         )
+            )
+      (uiop:run-program git-command
+           :output :string
+      :error-output :string
+      ))
+              )
+)
