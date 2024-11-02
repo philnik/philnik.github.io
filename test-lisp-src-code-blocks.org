@@ -1,0 +1,39 @@
+
+
+
+#+name:test-export
+    #+begin_src lisp :session :results html :wrap src python
+    (ql:quickload :cl-interpol)
+(named-readtables:in-readtable :interpol-syntax)
+#?"
+    def hello():
+        print('world')
+        return [1,2,3]
+    hello()
+    "
+
+    #+end_src
+
+    #+RESULTS: test-export
+    #+begin_src python
+
+        def hello():
+            print('world')
+            return [1,2,3]
+        hello()
+
+    #+end_src
+
+    #+RESULTS:
+
+    
+    #+begin_src python
+
+        def hello():
+            print('world')
+            return [1,2,3]
+        hello()
+
+    #+end_src
+
+    

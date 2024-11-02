@@ -1,0 +1,47 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* Change motorycle engine coolant
+
+    #+ATTR: 100
+    
+    #+attr_html: :width 400px
+    #+CAPTION: Position of drain bolt
+    #+ATTR_HTML: :alt drain-bolt-position :title drain-bolt-position :align center
+    [[./drain-bolt.png]]
+
+
+** Steps to change the engine coolant
+
+    1. Remove the drain bolt : size of bolt 8mm wrench (check again M___)
+    2. If the bolt is rusty, replace
+    2. Remove the top of the radiator
+    3. Let the fluid drain, using a fuel and a bucket, move the motorycle, to move as much fluid as possible
+    4. Empty the overflow tank - need to check the tank empties from drain bolt or need to remove the hose under it.
+    5. Tighten again the bolt
+    5. Fill with distilled water
+    6. Flush the distiller water, removing the bolt, repeat if necessary.
+    7. Tighten the bolt and clean any cooling liquid leftovers.
+    8.  Fill with new cooling liquid.
+    9. Cooling liquid quantity according to manufacturer is about 1 liter, if the quanity added much lower , the previus liquid was not removed.
+    10. Move the engine , to fill more.
+    11. Fill overflow tank
+    12. Fix radiator fins shape with a screw driver.
+    13. Start the engine without the refrigerator cap.
+    14. Fill more cooling liquid.
+    15. Leave the engine running, moving the motorycle, filling liquid.
+    16. Make sure it is properly filled, if not the engine will start overheating
+    17. If the engine is overheating, it is not filled with new cooling liquid.
+    18. Wait a bit to cool, remove the radiator cap and refill, until the new cooling fluid circulates through the pump and fills the engine 
+    19. Check with the engine on if the engine overheats and fill more cooling fluid.
+
+
+** Comments:
+    - The flow appears to be little up , in the engine , so probably there must be some leftovers.
+    - It needs to be filled very little each time, make some bubbles to suck the fluid, and fill again as much as the radiator cap area can take.
+    - I can not be filled by the overflow tank.
+    - The overflow does not change level, need to check radiator pressure.
+    - It had white salt deposits undfer the  cap.
+
+    
+** TODO
+    - Find a more quick way to fill the engine coolant.

@@ -1,0 +1,98 @@
+
+
+
+#+OPTIONS: toc:nil 
+#+OPTIONS: DESCRIPTION: Index file
+#+PROPERTY: HEADER-ARGS+ :eval no-export
+
+
+* Code index
+
+** List of files
+
+    [[./0.html][List of dxf codes]]
+
+    Includes a list of dxf files produced by python library dxf
+
+** binomials
+
+    [[binomials][example of binomials]]
+
+** FEM
+
+*** Software Installation
+[[./FEM.html]]
+
+    Install finite elements
+
+*** FEM pictures
+
+    [[./fem/test.html]]
+
+    Pictures of fem runs
+    
+    
+** sympy vs maxima
+
+    [[./sympy_vs_maxima.html][maxima vs sympy]]
+    Code comparing of solving the same problem in maxima and sumpy
+
+** tank deflection
+
+
+    [[./tank_deflection.html][finite elements method of tank deflection]]
+
+    Elmer finite elements method, results
+
+** fixing up my motorcycle
+
+    [[./motorcycle/drain-bolt.html][change cooling fluid]]
+
+    Change engine cooling fluid of Zontes G1 150
+
+
+** org-mode produce python code, using lisp
+
+    [[./test-lisp-src-code-blocks.html]]
+
+
+* upload file                                                      :noexport:
+
+** upload using shell
+    #+name: git-export
+    #+begin_src shell exports :none :results none
+       cd c:/Users/filip/AppData/Roaming/projects/philnik.github.io
+       git commit index.html -m "add index"
+       git commit -am "remove source code blocks"
+       git push 
+    #+end_src
+
+#+begin_src emacs-lisp
+    (org-html-export-to-html)
+
+    (defun execute-org-src-block-by-name (name)
+  "Execute a source code block in the current Org buffer by NAME."
+  (interactive "sBlock name: ")
+  (save-excursion
+    ;; Search for the named block in the buffer.
+    (goto-char (point-min))
+    (if (re-search-forward (format "#\\+NAME: %s" (regexp-quote name)) nil t)
+        (progn
+          ;; Move to the code block after the name.
+          (org-babel-next-src-block)
+          ;; Execute the source code block.
+          (org-babel-execute-src-block))
+      (message "No source block named '%s' found" name))))
+
+    
+    (org-src-block-by-name "git-export")
+
+#+end_src
+
+#+RESULTS:
+: index.html
+
+
+
+
+   
