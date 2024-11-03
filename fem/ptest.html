@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        img {
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div id="gallery">
+        <!-- Images will be inserted here -->
+    </div>
+    <script>
+      const images = [
+
+      {{ image_list }}
+
+
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Image';
+            gallery.appendChild(img);
+        });
+    </script>
+</body>
+</html>

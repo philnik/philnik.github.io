@@ -1,32 +1,35 @@
 
 
-
-
-
-
 #+begin_src python :session *Python*
+from jinja2 import Environment, FileSystemLoader
 import os
-os.listdir()
-
-res = []        
-    
 import glob
+
+os.listdir()
 patterns = ["*.jpg", "*.png"]
 files = [file for pattern in patterns for file in glob.glob(pattern)]
 
-l = files
-    
 res = []  
-for i in l:
+for i in files:
     row = f"\"{i}\""
     res.append(row)
-
     
-resul = ",".join(res)
-print(resul)
-resul
+image_list = ",".join(res)
+
+environment = Environment(loader=FileSystemLoader("./"))
+template = environment.get_template("ptest.html")
+content = template.render(image_list = image_list)
+
+filename = "./test.html"
+with open(filename, mode="w", encoding="utf-8") as message:
+        message.write(content)
+        print(f"... wrote {filename}")
+
     
 #+end_src
 
 #+RESULTS:
-: "1.jpg" "10.jpg" "11.jpg" "110.jpg" "12.jpg" "2.jpg" "3.jpg" "4.jpg" "5.jpg" "6.jpg" "8.jpg" "9.jpg" "elasticity.jpg" "resu.jpg" "resu0.jpg" "resu1.jpg" "resu10.jpg" "resu11.jpg" "resu12.jpg" "resu13.jpg" "resu14.jpg" "resu15.jpg" "resu16.jpg" "resu2.jpg" "resu20.jpg" "resu21.jpg" "resu22.jpg" "resu23.jpg" "resu24.jpg" "resu25.jpg" "resu26.jpg" "temperature.jpg" "gamma-on-big-side-right.png" "hydrostatic-negative-on-shell.png" "hydrostatic-positive-on-shell.png" "hydrostatic-vertical-reinforcement.png" "hydrostatic-vertical-reinforcement2.png" "normal-pressure-middle-no-dnu.png" "normal-pressure-on-shell-fixed.png" "normal-pressure-on-shell-no-dnu.png" "normal-pressure-square-equal-2m.png" "normal-pressure-square-equal.png" "normal-pressure-square-fixture-at-0,3-50mm-70mm-2.png" "normal-pressure-square-fixture-at-0,3-50mm-70mm.png" "normal-pressure-square-fixture-at-0,3-50mm.png" "normal-pressure-square-fixture-at-0,3-at-20mm-thickness-steel.png" "normal-pressure-square-fixture-at-0,3.png" "normal-pressure-square-fixture-wrap.png" "normal-pressure-square-fixture.png" "square_shell_at_middle-section.png" "square_shell_at_middle-section2.png" "square_shell_at_middle-section3.png" "square_shell_at_middle-section4.png" "square_shell_at_middle-section5.png" "square_shell_at_middle-section6.png" "square_shell_at_middle-section7.png" "square_shell_at_middle.png" "square_shell_at_middle02.png" "square_shell_at_middle03.png" "square_shell_top.png" "triangle_pressure_on_shell_fixed.png"
+
+
+    
+
