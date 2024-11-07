@@ -1,5 +1,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
 
+#  #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 
 #+OPTIONS: toc:nil 
 #+OPTIONS: DESCRIPTION: Index file
