@@ -1,75 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
-    <style>
-        body {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: #f0f0f0;
-        }
-        img {
-            margin: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            max-width: 200px;
-            max-height: 200px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Image Gallery</title>
+<style>
+body { font-family: sans-serif; background: #111; color: #eee; }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 12px;
+    padding: 20px;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+</style>
 </head>
 <body>
-    <h1>Image Gallery</h1>
-    <div id="gallery">
-        <!-- Images will be inserted here -->
-    </div>
-    <script>
-      const images = [
-	  "fem/1.jpg",
-	  "fem/10.jpg",
-	  "fem/11.jpg",
-	  "fem/110.jpg",
-	  "fem/12.jpg",
-	  "fem/2.jpg",
-	  "fem/3.jpg",
-	  "fem/4.jpg",
-	  "fem/5.jpg",
-	  "fem/6.jpg",
-	  "fem/8.jpg",
-	  "fem/9.jpg",
-	  "fem/elasticity.jpg",
-	  "fem/resu.jpg",
-	  "fem/resu0.jpg",
-	  "fem/resu1.jpg",
-	  "fem/resu10.jpg",
-	  "fem/resu11.jpg",
-	  "fem/resu12.jpg",
-	  "fem/resu13.jpg",
-	  "fem/resu14.jpg",
-	  "fem/resu15.jpg",
-	  "fem/resu16.jpg",
-	  "fem/resu2.jpg",
-	  "fem/resu20.jpg",
-	  "fem/resu21.jpg",
-	  "fem/resu22.jpg",
-	  "fem/resu23.jpg",
-	  "fem/resu24.jpg",
-	  "fem/resu25.jpg",
-	  "fem/resu26.jpg",
-	  "fem/temperature.jpg"
-            // Add more image paths here
-        ];
+<h1>Image Gallery</h1>
+<div class="gallery">
+  <a href="fem/1.jpg" target="_blank"><img src="fem/1.jpg" alt="fem/1.jpg"></a>
+  <a href="fem/10.jpg" target="_blank"><img src="fem/10.jpg" alt="fem/10.jpg"></a>
+  <a href="fem/11.jpg" target="_blank"><img src="fem/11.jpg" alt="fem/11.jpg"></a>
+  <a href="fem/110.jpg" target="_blank"><img src="fem/110.jpg" alt="fem/110.jpg"></a>
+  <a href="fem/12.jpg" target="_blank"><img src="fem/12.jpg" alt="fem/12.jpg"></a>
+  <a href="fem/2.jpg" target="_blank"><img src="fem/2.jpg" alt="fem/2.jpg"></a>
+  <a href="fem/3.jpg" target="_blank"><img src="fem/3.jpg" alt="fem/3.jpg"></a>
+  <a href="fem/4.jpg" target="_blank"><img src="fem/4.jpg" alt="fem/4.jpg"></a>
+  <a href="fem/5.jpg" target="_blank"><img src="fem/5.jpg" alt="fem/5.jpg"></a>
+  <a href="fem/6.jpg" target="_blank"><img src="fem/6.jpg" alt="fem/6.jpg"></a>
+  <a href="fem/8.jpg" target="_blank"><img src="fem/8.jpg" alt="fem/8.jpg"></a>
+  <a href="fem/9.jpg" target="_blank"><img src="fem/9.jpg" alt="fem/9.jpg"></a>
+  <a href="fem/elasticity.jpg" target="_blank"><img src="fem/elasticity.jpg" alt="fem/elasticity.jpg"></a>
+  <a href="fem/fan-pull-extreme-case-10.png" target="_blank"><img src="fem/fan-pull-extreme-case-10.png" alt="fem/fan-pull-extreme-case-10.png"></a>
+  <a href="fem/fan-pull-extreme-case-11.png" target="_blank"><img src="fem/fan-pull-extreme-case-11.png" alt="fem/fan-pull-extreme-case-11.png"></a>
+  <a href="fem/fan-pull-extreme-case-12.png" target="_blank"><img src="fem/fan-pull-extreme-case-12.png" alt="fem/fan-pull-extreme-case-12.png"></a>
+  <a href="fem/fan-pull-extreme-case-2.png" target="_blank"><img src="fem/fan-pull-extreme-case-2.png" alt="fem/fan-pull-extreme-case-2.png"></a>
+  <a href="fem/fan-pull-extreme-case-3.png" target="_blank"><img src="fem/fan-pull-extreme-case-3.png" alt="fem/fan-pull-extreme-case-3.png"></a>
+  <a href="fem/fan-pull-extreme-case-4.png" target="_blank"><img src="fem/fan-pull-extreme-case-4.png" alt="fem/fan-pull-extreme-case-4.png"></a>
+  <a href="fem/fan-pull-extreme-case-5.png" target="_blank"><img src="fem/fan-pull-extreme-case-5.png" alt="fem/fan-pull-extreme-case-5.png"></a>
+  <a href="fem/fan-pull-extreme-case-6.png" target="_blank"><img src="fem/fan-pull-extreme-case-6.png" alt="fem/fan-pull-extreme-case-6.png"></a>
+  <a href="fem/fan-pull-extreme-case-7.png" target="_blank"><img src="fem/fan-pull-extreme-case-7.png" alt="fem/fan-pull-extreme-case-7.png"></a>
+  <a href="fem/fan-pull-extreme-case-8.png" target="_blank"><img src="fem/fan-pull-extreme-case-8.png" alt="fem/fan-pull-extreme-case-8.png"></a>
+  <a href="fem/fan-pull-extreme-case-9.png" target="_blank"><img src="fem/fan-pull-extreme-case-9.png" alt="fem/fan-pull-extreme-case-9.png"></a>
+  <a href="fem/fan-pull-extreme-case.png" target="_blank"><img src="fem/fan-pull-extreme-case.png" alt="fem/fan-pull-extreme-case.png"></a>
+  <a href="fem/gamma-on-big-side-right.png" target="_blank"><img src="fem/gamma-on-big-side-right.png" alt="fem/gamma-on-big-side-right.png"></a>
+  <a href="fem/hydrostatic-negative-on-shell.png" target="_blank"><img src="fem/hydrostatic-negative-on-shell.png" alt="fem/hydrostatic-negative-on-shell.png"></a>
+  <a href="fem/hydrostatic-positive-on-shell.png" target="_blank"><img src="fem/hydrostatic-positive-on-shell.png" alt="fem/hydrostatic-positive-on-shell.png"></a>
+  <a href="fem/hydrostatic-vertical-reinforcement.png" target="_blank"><img src="fem/hydrostatic-vertical-reinforcement.png" alt="fem/hydrostatic-vertical-reinforcement.png"></a>
+  <a href="fem/hydrostatic-vertical-reinforcement2.png" target="_blank"><img src="fem/hydrostatic-vertical-reinforcement2.png" alt="fem/hydrostatic-vertical-reinforcement2.png"></a>
+  <a href="fem/normal-pressure-middle-no-dnu.png" target="_blank"><img src="fem/normal-pressure-middle-no-dnu.png" alt="fem/normal-pressure-middle-no-dnu.png"></a>
+  <a href="fem/normal-pressure-on-shell-fixed.png" target="_blank"><img src="fem/normal-pressure-on-shell-fixed.png" alt="fem/normal-pressure-on-shell-fixed.png"></a>
+  <a href="fem/normal-pressure-on-shell-no-dnu.png" target="_blank"><img src="fem/normal-pressure-on-shell-no-dnu.png" alt="fem/normal-pressure-on-shell-no-dnu.png"></a>
+  <a href="fem/normal-pressure-square-equal-2m.png" target="_blank"><img src="fem/normal-pressure-square-equal-2m.png" alt="fem/normal-pressure-square-equal-2m.png"></a>
+  <a href="fem/normal-pressure-square-equal.png" target="_blank"><img src="fem/normal-pressure-square-equal.png" alt="fem/normal-pressure-square-equal.png"></a>
+  <a href="fem/normal-pressure-square-fixture-at-0,3-50mm-70mm-2.png" target="_blank"><img src="fem/normal-pressure-square-fixture-at-0,3-50mm-70mm-2.png" alt="fem/normal-pressure-square-fixture-at-0,3-50mm-70mm-2.png"></a>
+  <a href="fem/normal-pressure-square-fixture-at-0,3-50mm-70mm.png" target="_blank"><img src="fem/normal-pressure-square-fixture-at-0,3-50mm-70mm.png" alt="fem/normal-pressure-square-fixture-at-0,3-50mm-70mm.png"></a>
+  <a href="fem/normal-pressure-square-fixture-at-0,3-50mm.png" target="_blank"><img src="fem/normal-pressure-square-fixture-at-0,3-50mm.png" alt="fem/normal-pressure-square-fixture-at-0,3-50mm.png"></a>
+  <a href="fem/normal-pressure-square-fixture-at-0,3-at-20mm-thickness-steel.png" target="_blank"><img src="fem/normal-pressure-square-fixture-at-0,3-at-20mm-thickness-steel.png" alt="fem/normal-pressure-square-fixture-at-0,3-at-20mm-thickness-steel.png"></a>
+  <a href="fem/normal-pressure-square-fixture-at-0,3.png" target="_blank"><img src="fem/normal-pressure-square-fixture-at-0,3.png" alt="fem/normal-pressure-square-fixture-at-0,3.png"></a>
+  <a href="fem/normal-pressure-square-fixture-wrap.png" target="_blank"><img src="fem/normal-pressure-square-fixture-wrap.png" alt="fem/normal-pressure-square-fixture-wrap.png"></a>
+  <a href="fem/normal-pressure-square-fixture.png" target="_blank"><img src="fem/normal-pressure-square-fixture.png" alt="fem/normal-pressure-square-fixture.png"></a>
+  <a href="fem/orth0.png" target="_blank"><img src="fem/orth0.png" alt="fem/orth0.png"></a>
+  <a href="fem/ortho1.png" target="_blank"><img src="fem/ortho1.png" alt="fem/ortho1.png"></a>
+  <a href="fem/ortho2.png" target="_blank"><img src="fem/ortho2.png" alt="fem/ortho2.png"></a>
+  <a href="fem/ortho3.png" target="_blank"><img src="fem/ortho3.png" alt="fem/ortho3.png"></a>
+  <a href="fem/ortho4.png" target="_blank"><img src="fem/ortho4.png" alt="fem/ortho4.png"></a>
+  <a href="fem/ortho5.png" target="_blank"><img src="fem/ortho5.png" alt="fem/ortho5.png"></a>
+  <a href="fem/ortho6.png" target="_blank"><img src="fem/ortho6.png" alt="fem/ortho6.png"></a>
+  <a href="fem/ortho7.png" target="_blank"><img src="fem/ortho7.png" alt="fem/ortho7.png"></a>
+  <a href="fem/ortho8.png" target="_blank"><img src="fem/ortho8.png" alt="fem/ortho8.png"></a>
+  <a href="fem/resu.jpg" target="_blank"><img src="fem/resu.jpg" alt="fem/resu.jpg"></a>
+  <a href="fem/resu0.jpg" target="_blank"><img src="fem/resu0.jpg" alt="fem/resu0.jpg"></a>
+  <a href="fem/resu1.jpg" target="_blank"><img src="fem/resu1.jpg" alt="fem/resu1.jpg"></a>
+  <a href="fem/resu10.jpg" target="_blank"><img src="fem/resu10.jpg" alt="fem/resu10.jpg"></a>
+  <a href="fem/resu11.jpg" target="_blank"><img src="fem/resu11.jpg" alt="fem/resu11.jpg"></a>
+  <a href="fem/resu12.jpg" target="_blank"><img src="fem/resu12.jpg" alt="fem/resu12.jpg"></a>
+  <a href="fem/resu13.jpg" target="_blank"><img src="fem/resu13.jpg" alt="fem/resu13.jpg"></a>
+  <a href="fem/resu14.jpg" target="_blank"><img src="fem/resu14.jpg" alt="fem/resu14.jpg"></a>
+  <a href="fem/resu15.jpg" target="_blank"><img src="fem/resu15.jpg" alt="fem/resu15.jpg"></a>
+  <a href="fem/resu16.jpg" target="_blank"><img src="fem/resu16.jpg" alt="fem/resu16.jpg"></a>
+  <a href="fem/resu2.jpg" target="_blank"><img src="fem/resu2.jpg" alt="fem/resu2.jpg"></a>
+  <a href="fem/resu20.jpg" target="_blank"><img src="fem/resu20.jpg" alt="fem/resu20.jpg"></a>
+  <a href="fem/resu21.jpg" target="_blank"><img src="fem/resu21.jpg" alt="fem/resu21.jpg"></a>
+  <a href="fem/resu22.jpg" target="_blank"><img src="fem/resu22.jpg" alt="fem/resu22.jpg"></a>
+  <a href="fem/resu23.jpg" target="_blank"><img src="fem/resu23.jpg" alt="fem/resu23.jpg"></a>
+  <a href="fem/resu24.jpg" target="_blank"><img src="fem/resu24.jpg" alt="fem/resu24.jpg"></a>
+  <a href="fem/resu25.jpg" target="_blank"><img src="fem/resu25.jpg" alt="fem/resu25.jpg"></a>
+  <a href="fem/resu26.jpg" target="_blank"><img src="fem/resu26.jpg" alt="fem/resu26.jpg"></a>
+  <a href="fem/square_shell_at_middle-section.png" target="_blank"><img src="fem/square_shell_at_middle-section.png" alt="fem/square_shell_at_middle-section.png"></a>
+  <a href="fem/square_shell_at_middle-section2.png" target="_blank"><img src="fem/square_shell_at_middle-section2.png" alt="fem/square_shell_at_middle-section2.png"></a>
+  <a href="fem/square_shell_at_middle-section3.png" target="_blank"><img src="fem/square_shell_at_middle-section3.png" alt="fem/square_shell_at_middle-section3.png"></a>
+  <a href="fem/square_shell_at_middle-section4.png" target="_blank"><img src="fem/square_shell_at_middle-section4.png" alt="fem/square_shell_at_middle-section4.png"></a>
+  <a href="fem/square_shell_at_middle-section5.png" target="_blank"><img src="fem/square_shell_at_middle-section5.png" alt="fem/square_shell_at_middle-section5.png"></a>
+  <a href="fem/square_shell_at_middle-section6.png" target="_blank"><img src="fem/square_shell_at_middle-section6.png" alt="fem/square_shell_at_middle-section6.png"></a>
+  <a href="fem/square_shell_at_middle-section7.png" target="_blank"><img src="fem/square_shell_at_middle-section7.png" alt="fem/square_shell_at_middle-section7.png"></a>
+  <a href="fem/square_shell_at_middle.png" target="_blank"><img src="fem/square_shell_at_middle.png" alt="fem/square_shell_at_middle.png"></a>
+  <a href="fem/square_shell_at_middle02.png" target="_blank"><img src="fem/square_shell_at_middle02.png" alt="fem/square_shell_at_middle02.png"></a>
+  <a href="fem/square_shell_at_middle03.png" target="_blank"><img src="fem/square_shell_at_middle03.png" alt="fem/square_shell_at_middle03.png"></a>
+  <a href="fem/square_shell_top.png" target="_blank"><img src="fem/square_shell_top.png" alt="fem/square_shell_top.png"></a>
+  <a href="fem/temperature.jpg" target="_blank"><img src="fem/temperature.jpg" alt="fem/temperature.jpg"></a>
+  <a href="fem/triangle_pressure_on_shell_fixed.png" target="_blank"><img src="fem/triangle_pressure_on_shell_fixed.png" alt="fem/triangle_pressure_on_shell_fixed.png"></a>
 
-        const gallery = document.getElementById('gallery');
-
-        images.forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = 'Image';
-            gallery.appendChild(img);
-        });
-    </script>
+</div>
 </body>
 </html>
