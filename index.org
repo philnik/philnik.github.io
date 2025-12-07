@@ -29,7 +29,7 @@
 
 *** FEM pictures
 
-    [[./fem/test.html]]
+    [[./fem_images.html]]
 
     Pictures of fem runs
     
